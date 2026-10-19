@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body { @apply font-hand text-ink bg-sky/40; -webkit-tap-highlight-color: transparent; }
+  input { @apply font-hand; }
+}
+
+/* 手繪感：不對稱圓角 + 偏移實心陰影 */
+@layer components {
+  .sketch {
+    background: #fff;
+    border: 2.5px solid #2F3E4E;
+    border-radius: 18px 24px 16px 22px / 22px 16px 24px 18px;
+    box-shadow: 3px 3px 0 #2F3E4E;
+  }
+  .btn {
+    background: #fff;
+    border: 2.5px solid #2F3E4E;
+    border-radius: 18px 24px 16px 22px / 22px 16px 24px 18px;
+    box-shadow: 3px 3px 0 #2F3E4E;
+    padding: .7rem 1.25rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    transition: transform .08s, box-shadow .08s;
+  }
+  .btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #2F3E4E; }
+  .btn:disabled { opacity: .45; pointer-events: none; }
+  .btn-primary { background: #9ADBB5; }
+  .btn-sun { background: #FFD966; }
+  .field {
+    width: 100%;
+    background: #fff;
+    border: 2.5px solid #2F3E4E;
+    border-radius: 16px 22px 14px 20px / 20px 14px 22px 16px;
+    padding: .7rem 1rem;
+    outline: none;
+  }
+  .field:focus { box-shadow: 3px 3px 0 #A8D8F0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
